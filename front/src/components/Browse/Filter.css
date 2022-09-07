@@ -1,0 +1,160 @@
+.filter-main-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid rgba(67, 67, 67, 0.6);
+    background-color: rgba(67, 67, 67, 0.27);
+}
+
+.searchbar-container{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbar-container div{
+    width: 70%;
+}
+
+.searchbar-container img{
+    width: 30px;
+}
+
+.searchbar-container input{
+    margin-left: 15px;
+    border: none;
+    background-color: none;
+    background: none;
+    border-bottom: 2px solid rgb(81, 80, 80);
+    width: 70%;
+}
+
+.searchbar-container input::placeholder{
+    color: rgb(81, 80, 80);
+}
+
+.searchbar-container input:focus{
+    border: none;
+    outline: none;
+}
+
+.filter-container{
+    width: 65%;
+    padding: 30px;
+}
+
+.filter-container ul{
+    display: flex;
+}
+
+.filter-container ul li {
+    background-color: white;
+    margin: 20px;
+    padding: 5px 15px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+.filter-container ul li:hover{
+    border: 3px solid rgb(81, 80, 80);   
+}
+
+.filter-container ul li:active{
+    background-color: rgb(81, 80, 80);
+    color: white;
+}
+
+.search-result-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    padding: 30px;
+}
+
+.search-result-container h5{
+    padding: 10px;
+    background-color: rgba(81, 80, 80, 0.5);
+}
+
+.search-result-container img{
+    width: 10px;
+    margin: 10px;
+}
+
+@media(max-width:768px){
+    .filter-main-container{
+        flex-direction: column;
+    }
+
+    .searchbar-container{
+        width: 100%;
+    }
+
+    .searchbar-container div{
+        width: 90%;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .filter-container{
+        width: 100%;
+    }
+
+    .filter-container ul li{
+        padding: 4px 8px;
+    }
+}
+
+@media(max-width:1024px){
+    .filter-container ul{
+        overflow-x: scroll;
+    }
+}
+
+@media(max-width:320px){
+    .filter-main-container{
+        flex-direction: column;
+    }
+
+    .searchbar-container{
+        width: 100%;
+    }
+
+    .searchbar-container div{
+        width: 90%;
+        padding: 20px;
+    }
+
+    .searchbar-container input::placeholder{
+        font-size: 0.75rem;
+    }
+
+    .filter-container{
+        width: 100%;
+        padding-top: 5px;
+    }
+
+    .filter-container ul li{
+        font-size: 0.75rem;
+        padding: 0px 10px;
+        margin: 10px;
+        flex-wrap: nowrap;
+        width: max-content;
+    }
+
+    .filter-container ul{
+        overflow-x: scroll;
+    }
+    
+    .search-result-container h5{
+        font-size: 0.9rem;
+    }
+}

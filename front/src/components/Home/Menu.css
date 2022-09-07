@@ -1,0 +1,130 @@
+/* Position and sizing of burger button */
+.bm-burger-button {
+    position: fixed;
+    width: 38px;
+    height: 35px;
+    right: 4%;
+    top: 4.5%;
+  }
+  
+  /* Color/shape of burger icon bars */
+  .bm-burger-bars {
+    background: #ffffff;
+    box-shadow: 1px 3px 1px 1px rgba(0, 0, 0, 0.25) ;
+  }
+  
+  /* Color/shape of burger icon bars on hover*/
+  .bm-burger-bars-hover {
+    background: #ffffff;
+  }
+  
+  /* Position and sizing of clickable cross button */
+  .bm-cross-button {
+    height: 50px!important;
+    width: 50px!important;
+    background-color: #ffffff!important;
+  }
+  
+  /* Color/shape of close button cross */
+  .bm-cross {
+    background: black;
+  }
+  
+  /*
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+  .bm-menu-wrap {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 50%!important;
+  }
+  
+  /* General sidebar styles */
+  .bm-menu {
+    background: #ffffff;
+    padding: 25vh 10vw 0;
+    font-size: 1.3em;
+  }
+  
+  /* Morph shape necessary with bubble or elastic */
+  .bm-morph-shape {
+    fill: #373a47;
+  }
+  
+  /* Wrapper for item list */
+  .bm-item-list {
+    color: black;
+    /* padding: 0.8em; */
+  }
+  
+  /* Styling of overlay */
+  .bm-overlay {
+    position: absolute;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.5)!important;
+  }
+
+  /* Individual item */
+.bm-item {
+    display: inline-block;
+    color: black;
+    margin-bottom: 20px;
+    text-align: left;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-family: 'Raleway', sans-serif;
+    font-style: thin;
+    font-weight: 300;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .bm-item:hover {
+    color: black;
+    font-size: 1.5rem;
+  }
+
+  .menu-item-link{
+    display: none!important;
+  }
+
+  @media (max-width: 900px){
+    .bm-menu-wrap {
+      width: 100%!important;
+    }
+
+    .menu-item-link{
+      display: initial!important;
+      background: white;
+      border-radius: 10px;
+      padding:10px;   
+      color: black;
+      margin-bottom: 10px;
+      text-decoration: none;
+      font-weight: 200;
+    }
+
+    .menu-link-container{
+      display: flex!important;
+      width: fit-content;
+      flex-direction: column;
+    }
+  }
+
+@media(max-width:480px){
+  .bm-burger-button{
+    width: 30px;
+    height: 25px;
+  }
+}
+
+@media(max-width:480px){
+  .bm-burger-button{
+    top: 3%;
+  }
+
+  .bm-item{
+    font-size: 1rem;
+  }
+}

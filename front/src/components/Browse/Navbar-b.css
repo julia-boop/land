@@ -1,0 +1,45 @@
+.navbar-b-container{
+    position: relative;
+    top: 0px;
+    width: 100%;
+    background-color: rgba(67, 67, 67, 0.27);
+}
+
+.navbar-b{
+    width: 100%;
+    border-bottom: 2px solid rgba(67, 67, 67, 0.6);
+}
+
+.navbar-b ul {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-b ul li {
+    margin-left: 10px;
+    z-index: 1000;
+}
+
+.logo-li-b img{
+    width: 70px;
+}
+
+.name-li-b img{
+    width: 150px;
+}
+
+@media(max-width:320px){
+    .logo-li-b img{
+        width: 30px;
+    }
+
+    .name-li-b img{
+        width: 90px;
+    }
+
+    .navbar-b ul{
+        padding:20px 10px;
+    }
+}

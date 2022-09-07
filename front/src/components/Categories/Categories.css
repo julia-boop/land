@@ -1,0 +1,360 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+FARMS & RANCHES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.farm-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(67, 67, 67, 0.5);
+}
+
+.img-title-container{
+    display: flex;
+}
+
+.farm-title-container{
+    width: 30%;
+    text-align: center;
+    margin: 70px 20px 20px 20px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.farm-img-container{
+    width: 55%;
+}
+
+.farm-img-container img{
+    width: 100%;
+    height: 60vh;
+    margin-top: -40px;
+}
+
+.farm-btn-container{
+    width: 100%;
+    align-self: stretch;
+    text-align: center;
+    margin: 50px 0px 70px 0px;
+    padding: 50px 0px 50px 0px;
+}
+
+.farm-btn-container a{
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid #ffffff;
+    padding: 20px 40px;
+    color: white;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DEVELOPMENTS & COMMUNITIES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.development-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.development-title-container{
+    width: 30%;
+    text-align: center;
+    margin: 70px 20px 20px 20px;
+    color: rgb(81, 80, 80);
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.development-img-container{
+    width: 50%;
+}
+
+.development-img-container img{
+    width: 100%;
+    margin-top: -40px;
+}
+
+.development-btn-container{
+    width: 100%;
+    align-self: stretch;
+    text-align: center;
+    margin: 50px 0px 70px 0px;
+    padding: 50px 0px 50px 0px;
+}
+
+.development-btn-container a{
+    background-color: rgba(81, 80, 80, 0.1);
+    padding: 20px 40px;
+    color: rgb(81, 80, 80);
+    border: 2px solid rgb(81, 80, 80);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PROPERTIES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.property-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.property-img-container{
+    align-self: flex-start;
+    width: 60%;
+    background-color: rgb(217, 217, 217);
+    padding: 80px;
+}
+
+.property-img-container img{
+    width: 100%;
+    height: 60vh;
+}
+
+.property-title-container{
+    width: 30%;
+    text-align: center;
+    margin: 70px 20px 20px 20px;
+    color: rgb(81, 80, 80);
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.property-btn-container{
+    width: 100%;
+    align-self: stretch;
+    text-align: center;
+    margin: 20px 0px 70px 0px;
+    padding: 50px 0px 50px 0px;
+}
+
+.property-btn-container a{
+    background-color: rgba(81, 80, 80, 0.1);
+    padding: 20px 40px;
+    color: rgb(81, 80, 80);
+    border: 2px solid rgb(81, 80, 80);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RENTALS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.rental-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    background-color: rgba(67, 67, 67, 0.35);
+}
+
+.rental-img-container{
+    width: 60%;    
+}
+
+.rental-img-container img{
+    width: 100%;
+    height: 60vh;
+    margin-top: -40px;
+}
+
+.rental-title-container{
+    width: 30%;
+    text-align: center;
+    margin: 70px 20px 20px 20px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;   
+}
+
+.rental-btn-container{
+    width: 100%;
+    align-self: stretch;
+    text-align: center;
+    margin: 20px 0px 70px 0px;
+    padding: 50px 0px 50px 0px;   
+}
+
+.rental-btn-container a{
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid #ffffff;
+    padding: 20px 40px;
+    color: white;   
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BUYERS AGENT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.buyers-agent-container{
+    padding: 100px;
+}
+
+.buyers-agent-container h2{
+    text-align: center;
+    font-weight: 700;
+    margin: 50px 50px 10px 50px;
+}
+
+.buyers-agent-container h3{
+    text-align: center;
+    letter-spacing: -5px;
+    margin-bottom: 50px;
+    color: #C9C44E;
+}
+
+.buyers-agent-text-container p{
+    text-align: center;
+    margin: 0 60px 20px 60px;
+}
+
+@media(max-width:768px){
+    .development-title-container{
+        width: 45%;
+    }
+
+    .farm-img-container img{
+        height: 50vh;
+    }
+
+    .property-img-container img{
+        height: 45vh;
+    }
+
+    .property-img-container{
+        width: 75%;
+    }
+
+    .property-title-container{
+        width: 50%;
+    }
+
+    .rental-img-container img{
+        height: 50vh;
+    }
+
+    .rental-title-container{
+        width: 50%;
+    }
+}
+
+@media(max-width:480px){
+    .img-title-container{
+        flex-direction: column;
+    }
+
+    .farm-title-container{
+        width: 100%;
+        margin: 70px 5px 30px 5px;
+    }
+
+    .farm-img-container{
+        width: 100%;
+    }
+
+    .farm-img-container img{
+        margin-top: 20px;
+    }
+
+    .development-img-container{
+        width: 75%;
+    }
+
+    .development-title-container{
+        width: 75%;
+    }
+
+    .property-img-container{
+        width: 100%;
+        padding: 60px;
+    }
+
+    .property-img-container img{
+        height: 40vh;
+    }
+
+    .property-title-container{
+        width: 75%;
+    }
+
+    .rental-img-container{
+        width: 75%;
+    }
+
+    .rental-img-container img{
+        height: 40vh;
+    }
+
+    .buyers-agent-container{
+        padding: 35px;
+    }
+}
+
+@media(max-width:480px){
+    .farm-img-container img{
+        height: 30vh;
+    }
+
+    .farm-title-container h1{
+        font-size: 1.3rem;
+    }
+
+    .farm-btn-container a{
+        font-size: 0.9rem;
+    }
+
+    .development-title-container h1{
+        font-size: 1.3rem;
+    }
+
+    .development-btn-container a{
+        font-size: 0.9rem;       
+    }
+
+    .property-img-container img{
+        height: 35vh;
+    }
+
+    .property-img-container{
+        padding: 35px;
+    }
+
+    .property-title-container h1{
+        font-size: 1.3rem;       
+    }
+
+    .property-btn-container a{
+        font-size: 0.9rem;
+    }
+
+    .rental-img-container{
+        width: 100%;
+    }
+
+    .rental-title-container{
+        width: 100%;
+    }
+
+    .rental-title-container h1{
+        font-size: 1.3rem;
+    }
+
+    .rental-btn-container a{
+        font-size: 0.9rem;
+    }
+
+    .buyers-agent-container h2{
+        margin: 50px 25px 10px 25px;
+        font-size: 1rem;
+    }
+
+    .buyers-agent-container h3{
+        margin-bottom:25px ;
+    }
+
+    .buyers-agent-text-container p{
+        margin: 0px 25px 20px 25px;
+        font-size: 0.75rem;
+    }
+}
