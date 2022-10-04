@@ -20,6 +20,14 @@ module.exports = {
             model: 'property',
             key: 'id'
           }
+        }, 
+        home_portrait: {
+          type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
+          allowNull: false
+        },
+        detail_portrait: {
+          type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
+          allowNull: false
         }
 
     })

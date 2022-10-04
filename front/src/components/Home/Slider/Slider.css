@@ -35,7 +35,7 @@
 }
 
 @media(max-width:320px){
-    .carousel-caption p{
+    .carousel-caption{
         font-size: 0.56rem;
     }
 }

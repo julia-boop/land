@@ -24,6 +24,10 @@ module.exports = {
                 model: "feature",
                 key: "id"
             }
+        }, 
+        value: {
+            type: Sequelize.DataTypes.STRING(100),
+            allowNull: false
         }
     })
   },

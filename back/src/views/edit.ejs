@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+<body>
+    <%- include('./partials/header') %>
+    <div class="form-container">
+        <h3>Edit Property</h3>
+        <form action="/edit" method="">
+            <label>Name</label>
+            <input type="text" name="name">
+            <label>Description</label>
+            <textarea name="description" id="" cols="30" rows="10"></textarea>
+            <label>Zone</label>
+            <input type="text" name="zone">
+            <label>Country</label>
+            <select name="country" id="">
+                <option value=""></option>
+                <% for(country of countries) {%> 
+                    <option value="<%= country.name.common %>"><%= country.name.common %></option>
+                <% } %> 
+            </select>
+            <label>Price</label>
+            <input type="text" name="price">
+            <label>Video URL</label>
+            <input type="text" name="video">
+            <label>Category</label>
+            <select name="category" id="">
+                <% for(cat of category) {%> 
+                <option value=<%= cat.id %> ><%= cat.name %> </option>
+                <% } %> 
+            </select>
+            <label>Key Words</label>
+            <textarea name="keywords" id="" cols="30" rows="10"></textarea>
+            <label for="portrait">Detail Portrait Image</label>
+            <input type="text" name="portrait" placeholder="Portrait Image URL">
+            <label for="image">Images</label>
+            <div class="img-input-container">
+                <input type="text" name="image" placeholder="Image 1">
+                <input type="text" name="image" placeholder="Image 2">
+                <input type="text" name="image" placeholder="Image 3">
+                <input type="text" name="image" placeholder="Image 4">
+            </div>
+            <button id="btn_image">Add Image</button>
+            <label for="">Is Home Portrait?</label>
+            <label for="home-portrait"><input type="checkbox" name="home-portrait" value="1">Yes</label>
+            <label for="home-portrait"><input type="checkbox" name="home-portrait" value="0">No</label>
+            <h4>Features</h4>
+            <div class="feature-input-container">
+                <div>
+                    <input type="text" name="feature" readonly value="Feature1">
+                    <input type="text" name="feature-value">
+                </div>
+                <div>
+                    <input type="text" name="feature" readonly value="Feature2">
+                    <input type="text" name="feature-value">
+                </div>
+                <div>
+                    <input type="text" name="feature" readonly value="Feature3">
+                    <input type="text" name="feature-value">
+                </div>
+            </div>
+            <button id="btn_feature">Add New Feature</button>
+            <button id="btn_submit" type="submit">Create</button>
+        </form>
+    </div>
+</body>
+</html>
