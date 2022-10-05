@@ -5,6 +5,6 @@ const mainController = require('../controllers/mainController.js')
 router.get('/', mainController.main);
 router.get('/create', mainController.create_form);
 router.post('/create', mainController.create);
-router.get('/edit', mainController.edit);
+router.get('/edit/:id_property', mainController.edit);
 
 module.exports = router

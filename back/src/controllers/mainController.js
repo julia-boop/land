@@ -21,9 +21,14 @@ module.exports = {
                 name: e
             }
         })
-        // let drop_feature = await db.Feature.destroy({where: {
-        //     name: req.body.feature
-        // }})
+        let previous_feature = await db.Feature.findAll()
+        for (let i = 0 ; i < previous_feature.length ; i++){
+            for (let j = 0 ; j < features.length ; j++){
+                if(previous_feature[i].name == features[j].name){
+                    features.splice(j, 1)
+                }
+            }
+        }
         let create_feature = await db.Feature.bulkCreate(features)
         let create_property = await db.Property.create({
             name: req.body.name,
@@ -63,13 +68,32 @@ module.exports = {
     edit: async (req, res) => {
         const response = await fetch('https://restcountries.com/v3.1/all');
         const data = await response.json();
-
         let countries = data
+        let feature = await db.Feature.findAll()
+        let category = await db.Category.findAll()
+        let property = await db.Property.findOne({
+            where : {
+                id: req.params.id_property
+            }
+        })
+        let image = await db.Image.findAll({
+            where:{
+                property_id: req.params.id_property
+            }
+        })
+        let feature_property = await db.Feature_Property.findAll({
+            where: {
+                property_id: req.params.id_property
+            }
+        })
 
-        db.Category.findAll()
-        .then(category =>{
-            
-            res.render('edit', {category:category, countries:countries})
+        return res.render('edit', {
+            category:category, 
+            countries:countries,
+            feature: feature,
+            property:property,
+            image:image,
+            feature_property:feature_property
         })
     }
 }

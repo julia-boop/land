@@ -7,38 +7,45 @@
         <h3>Edit Property</h3>
         <form action="/edit" method="">
             <label>Name</label>
-            <input type="text" name="name">
+            <input type="text" name="name" value="<%= property.name %>">
             <label>Description</label>
-            <textarea name="description" id="" cols="30" rows="10"></textarea>
+            <textarea name="description" id="" cols="30" rows="10" value="<%= property.description %>"></textarea>
             <label>Zone</label>
-            <input type="text" name="zone">
+            <input type="text" name="zone" value="<%= property.zone %>">
             <label>Country</label>
             <select name="country" id="">
-                <option value=""></option>
+                <option value=""><%= property.country %></option>
                 <% for(country of countries) {%> 
                     <option value="<%= country.name.common %>"><%= country.name.common %></option>
                 <% } %> 
             </select>
             <label>Price</label>
-            <input type="text" name="price">
+            <input type="text" name="price" value="<%= property.price %>">
             <label>Video URL</label>
-            <input type="text" name="video">
+            <input type="text" name="video" value="<%= property.video %>">
             <label>Category</label>
             <select name="category" id="">
                 <% for(cat of category) {%> 
-                <option value=<%= cat.id %> ><%= cat.name %> </option>
+                <option value="<%= cat.id %>" <% (cat.id == property.category_id ? 'selected' : '')%> ><%= cat.name %></option>
                 <% } %> 
             </select>
             <label>Key Words</label>
-            <textarea name="keywords" id="" cols="30" rows="10"></textarea>
+            <textarea name="keywords" id="" cols="30" rows="10" value=""><%= property.keyword %></textarea>
             <label for="portrait">Detail Portrait Image</label>
-            <input type="text" name="portrait" placeholder="Portrait Image URL">
+            <% for(let i = 0 ; i < image.length ; i ++ ){ %> 
+                <% if(image[i].detail_portrait == 1) {%> 
+                    <img src="<%= image[i].url %>" alt="">
+                    <input type="text" name="portrait" placeholder="Portrait Image URL" value="<%= image[i].url %>">        
+                <% } %> 
+            <% } %> 
             <label for="image">Images</label>
             <div class="img-input-container">
-                <input type="text" name="image" placeholder="Image 1">
-                <input type="text" name="image" placeholder="Image 2">
-                <input type="text" name="image" placeholder="Image 3">
-                <input type="text" name="image" placeholder="Image 4">
+                <% for(im of image) {%> 
+                    <div>
+                        <img src="<%= im.url %>" alt="">
+                        <input type="text" name="image" placeholder="Image 1" value="<%= im.url %>">
+                    </div>
+                <% } %> 
             </div>
             <button id="btn_image">Add Image</button>
             <label for="">Is Home Portrait?</label>
