@@ -7,8 +7,20 @@ module.exports = function(sequelize, DataTypes){
             autoIncrement: true,
             allowNull: false
         },
-        name: {
+        url: {
             type: DataTypes.STRING(100),
+            allowNull: false
+        },      
+        property_id: {
+            type: DataTypes.INTEGER(10).UNSIGNED,
+            allowNull: false
+        }, 
+        home_portrait: {
+            type: DataTypes.INTEGER(10).UNSIGNED,
+            allowNull: false
+        },
+        detail_portrait: {
+            type: DataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
         }
     }

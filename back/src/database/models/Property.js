@@ -34,6 +34,10 @@ module.exports = function(sequelize, DataTypes){
         category_id: {
             type: DataTypes.STRING(100),
             allowNull: false
+        },
+        keyword: {
+            type: DataTypes.TEXT,
+            allowNull: false            
         }
     }
     const config = {

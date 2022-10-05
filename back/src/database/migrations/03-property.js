@@ -39,9 +39,12 @@ module.exports = {
           references: {
             model: 'category',
             key: 'id'
+          }
+        },
+        keyword: {
+          type: Sequelize.DataTypes.TEXT,
+          allowNull: false
         }
-        }
-
     })
   },
 

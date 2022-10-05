@@ -42,22 +42,16 @@
             </div>
             <button id="btn_image">Add Image</button>
             <label for="">Is Home Portrait?</label>
-            <label for="home-portrait"><input type="checkbox" name="home-portrait" value="1">Yes</label>
-            <label for="home-portrait"><input type="checkbox" name="home-portrait" value="0">No</label>
+            <label for="home-portrait"><input type="checkbox" name="home_portrait" value="1">Yes</label>
+            <label for="home-portrait"><input type="checkbox" name="home_portrait" value="0">No</label>
             <h4>Features</h4>
             <div class="feature-input-container">
+            <% for(let i = 0 ; i < feature.length ; i++) {%> 
                 <div>
-                    <input type="text" name="feature" readonly value="Feature1">
-                    <input type="text" name="feature-value">
+                    <input type="text" name="feature" readonly value="<%= feature[i].name %>">
+                    <input type="text" name="feature_value">
                 </div>
-                <div>
-                    <input type="text" name="feature" readonly value="Feature2">
-                    <input type="text" name="feature-value">
-                </div>
-                <div>
-                    <input type="text" name="feature" readonly value="Feature3">
-                    <input type="text" name="feature-value">
-                </div>
+            <% } %> 
             </div>
             <button id="btn_feature">Add New Feature</button>
             <button id="btn_submit" type="submit">Create</button>
