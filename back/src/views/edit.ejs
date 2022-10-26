@@ -5,11 +5,11 @@
     <%- include('./partials/header') %>
     <div class="form-container">
         <h3>Edit Property</h3>
-        <form action="/edit" method="">
+        <form action="/edit/<%= property.id %>?_method=PUT" method="POST">
             <label>Name</label>
             <input type="text" name="name" value="<%= property.name %>">
             <label>Description</label>
-            <textarea name="description" id="" cols="30" rows="10" value="<%= property.description %>"></textarea>
+            <textarea name="description" id="" cols="30" rows="10" value=""><%= property.description %></textarea>
             <label>Zone</label>
             <input type="text" name="zone" value="<%= property.zone %>">
             <label>Country</label>
@@ -34,41 +34,46 @@
             <label for="portrait">Detail Portrait Image</label>
             <% for(let i = 0 ; i < image.length ; i ++ ){ %> 
                 <% if(image[i].detail_portrait == 1) {%> 
-                    <img src="<%= image[i].url %>" alt="">
-                    <input type="text" name="portrait" placeholder="Portrait Image URL" value="<%= image[i].url %>">        
+                    <div class="portrait_img">
+                        <img src="https://i.postimg.cc/mgfWVLjF/Screen-Shot-2022-10-18-at-10-54-54.png" alt="">
+                        <input type="number" name="portrait_id" value="<%= image[i].id %>" hidden>
+                        <input type="text"  name="portrait" placeholder="Portrait Image URL" value="<%= image[i].url %>">        
+                    </div>
                 <% } %> 
             <% } %> 
             <label for="image">Images</label>
             <div class="img-input-container">
                 <% for(im of image) {%> 
                     <div>
-                        <img src="<%= im.url %>" alt="">
-                        <input type="text" name="image" placeholder="Image 1" value="<%= im.url %>">
+                        <img class="img-src" src="https://i.postimg.cc/mgfWVLjF/Screen-Shot-2022-10-18-at-10-54-54.png" alt="">
+                        <input type="number" value="<%= im.id %>" name="image_id" hidden> 
+                        <input type="text" class="img-input" name="image" placeholder="Image 1" value="<%= im.url %>">
                     </div>
                 <% } %> 
             </div>
             <button id="btn_image">Add Image</button>
             <label for="">Is Home Portrait?</label>
-            <label for="home-portrait"><input type="checkbox" name="home-portrait" value="1">Yes</label>
-            <label for="home-portrait"><input type="checkbox" name="home-portrait" value="0">No</label>
+            <label for="home_portrait"><input type="checkbox" name="home_portrait" <%= isHome ? 'checked' : '' %>  value="1">Yes</label>
+            <label for="home_portrait"><input type="checkbox" name="home_portrait" <%= !isHome ? 'checked' : '' %>  value="0">No</label>
             <h4>Features</h4>
             <div class="feature-input-container">
-                <div>
-                    <input type="text" name="feature" readonly value="Feature1">
-                    <input type="text" name="feature-value">
-                </div>
-                <div>
-                    <input type="text" name="feature" readonly value="Feature2">
-                    <input type="text" name="feature-value">
-                </div>
-                <div>
-                    <input type="text" name="feature" readonly value="Feature3">
-                    <input type="text" name="feature-value">
-                </div>
+                <% for( let i = 0 ; i < feature.length ; i ++ ){ %> 
+                    <div>
+                        <p><%= feature[i].id %> </p>
+                        <input type="text" name="feature" value="<%= feature[i].name %>" class="feature" >
+                        <input type="number" name="feature_id" hidden value="<%= feature[i].id %>">
+                        <input type="text" name="feature_value" value="<%= feature[i].value %>" >
+                        <input type="text" name="feature_value_id" hidden value="<%= feature[i].value_id %>">
+                    </div>
+                <% } %> 
+                
             </div>
             <button id="btn_feature">Add New Feature</button>
             <button id="btn_submit" type="submit">Create</button>
         </form>
     </div>
+    <script src="/js/edit_script.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes){
             type: DataTypes.STRING(100),
             allowNull: false
         },
-        email: {
+        mail: {
             type: DataTypes.STRING(100),
             allowNull: false
         },
@@ -21,6 +21,10 @@ module.exports = function(sequelize, DataTypes){
         },
         name: {
             type: DataTypes.INTEGER(10).UNSIGNED,
+            allowNull: false
+        }, 
+        role: {
+            type: DataTypes.INTEGER(10).UNSIGNED, 
             allowNull: false
         }
     }

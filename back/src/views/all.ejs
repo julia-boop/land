@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+<body>
+    <%- include('./partials/header') %>
+    <div class="all-container">
+        <% for (let i = 0 ; i < properties.length ; i ++ ) {%> 
+            <div class="property-container">
+                <img src="<%= properties[i].images[0].url %>" alt="">
+                <h3><%=properties[i].name %></h3>
+                <h4><%= properties[i].category.name %></h4>
+                <h5><a href="/edit/<%=properties[i].id %>">Editar</a></h5>
+            </div>
+        <% } %> 
+    </div>
+</body>
+</html>
