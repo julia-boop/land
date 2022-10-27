@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes){
             allowNull: false
         },
         url: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.TEXT,
             allowNull: false
         },      
         property_id: {
@@ -33,6 +33,7 @@ module.exports = function(sequelize, DataTypes){
 
     Image.associate = (models) => {
         Image.belongsTo(models.Property, {
+            as: 'property',
             foreignKey: 'property_id'
         })
     }

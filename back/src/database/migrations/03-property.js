@@ -44,6 +44,10 @@ module.exports = {
         keyword: {
           type: Sequelize.DataTypes.TEXT,
           allowNull: false
+        },
+        map_url: {
+          type: Sequelize.DataTypes.TEXT,
+          allowNull: false
         }
     })
   },

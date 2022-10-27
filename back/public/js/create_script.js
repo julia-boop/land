@@ -31,7 +31,7 @@ window.addEventListener('load', ()=> {
             feature_div.innerHTML+= `                
                 <div>
                     <input type="text" name="feature" readonly value="${feature}">
-                    <input type="text" name="feature-value">
+                    <input type="text" name="feature_value">
                 </div>`
         }
 

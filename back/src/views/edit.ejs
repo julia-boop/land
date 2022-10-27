@@ -35,7 +35,7 @@
             <% for(let i = 0 ; i < image.length ; i ++ ){ %> 
                 <% if(image[i].detail_portrait == 1) {%> 
                     <div class="portrait_img">
-                        <img src="https://i.postimg.cc/mgfWVLjF/Screen-Shot-2022-10-18-at-10-54-54.png" alt="">
+                        <img src="<%= image[i].url %>" alt="">
                         <input type="number" name="portrait_id" value="<%= image[i].id %>" hidden>
                         <input type="text"  name="portrait" placeholder="Portrait Image URL" value="<%= image[i].url %>">        
                     </div>
@@ -45,7 +45,7 @@
             <div class="img-input-container">
                 <% for(im of image) {%> 
                     <div>
-                        <img class="img-src" src="https://i.postimg.cc/mgfWVLjF/Screen-Shot-2022-10-18-at-10-54-54.png" alt="">
+                        <img class="img-src" src="<%= im.url %>" alt="">
                         <input type="number" value="<%= im.id %>" name="image_id" hidden> 
                         <input type="text" class="img-input" name="image" placeholder="Image 1" value="<%= im.url %>">
                     </div>

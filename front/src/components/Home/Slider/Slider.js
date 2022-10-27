@@ -1,29 +1,34 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 
 import './Slider.css'
+import axios from 'axios'
 
 function Slider() {
+    const [images, setImages] = useState([])
+    const [active, setActive] = useState(false)
+    useEffect(() => {
+        axios.get('http://localhost:3001/endpoints/fetch_home')
+        .then((res) => {
+            setImages(res.data)
+        })
+        console.log(images)
+    }, [])
+
     return (
         <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
-                <div className="carousel-item active" data-bs-interval="3000">
-                    <img src="/img/slide0.jpg" className="d-block w-100" alt="..."/>
-                    <div className="carousel-caption d-md-block">
-                        <p>Casa 1</p>
-                    </div>
-                </div>
-                <div className="carousel-item" data-bs-interval="3000">
-                    <img src="/img/slide1.jpg" className="d-block w-100" alt="..."/>
-                    <div className="carousel-caption d-md-block">
-                        <p>Casa 2</p>
-                    </div>
-                </div>
-                <div className="carousel-item" data-bs-interval="3000">
-                    <img src="/img/slide2.jpg" className="d-block w-100" alt="..."/>
-                    <div className="carousel-caption d-md-block">
-                        <p>Casa 3</p>
-                    </div>
-                </div>
+            {
+                    images.map((image, i) => {
+                        return (
+                            <div key={image.id} className={(i == 0)? 'carousel-item active' : 'carousel-item'} data-bs-interval="5000">
+                                <img src={image.images[0].url} className="d-block w-100" alt="..."/>
+                                <div className="carousel-caption d-md-block">
+                                    <a href=""><p>{image.name}</p></a>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
             </div>
         </div>
     )

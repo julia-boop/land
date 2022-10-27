@@ -38,6 +38,10 @@ module.exports = function(sequelize, DataTypes){
         keyword: {
             type: DataTypes.TEXT,
             allowNull: false            
+        }, 
+        map_url: {
+            type: DataTypes.TEXT,
+            allowNull: false
         }
     }
     const config = {

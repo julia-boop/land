@@ -4,10 +4,7 @@ async function createLocals(req, res, next) {
     if(req.session.userSession != undefined) {
         let user = await db.User.findByPk(req.session.userSession)
         if(user) {
-            res.locals.userLogged = {
-                id: user.id,
-                rol: user.rol
-            }
+            res.locals.userLogged = user.id
         }
     }
     console.log(req.session.userSession)

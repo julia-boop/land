@@ -10,7 +10,7 @@ module.exports = {
             autoIncrement:true
         },
         url: {
-            type: Sequelize.DataTypes.STRING(100),
+            type: Sequelize.DataTypes.TEXT,
             allowNull: false
         }, 
         property_id: {

@@ -78,6 +78,7 @@ module.exports = {
             price: req.body.price,
             category_id: req.body.category,
             keyword: req.body.keywords,
+            map_url: req.body.map
         })
         let image_array = req.body.image
         image_array.push(req.body.portrait)
@@ -91,18 +92,19 @@ module.exports = {
         })
         let create_images = await db.Image.bulkCreate(images)
         let feature_values = []
+        let last_features = await db.Feature.findAll()
         for (let i = 0; i < req.body.feature_value.length; i++){
             if(req.body.feature_value[i]!=''){
                 feature_values.push({
                     property_id: create_property.id,
-                    feature_id: create_feature[i].id,
+                    feature_id: last_features[i].id,
                     value: req.body.feature_value[i]
                 })
             }
         }
         let create_feature_values = await db.Feature_Property.bulkCreate(feature_values)
 
-        res.send(req.body)
+        return res.redirect('/all')
     },
     edit: async (req, res) => {
         const response = await fetch('https://restcountries.com/v3.1/all');
@@ -298,3 +300,9 @@ module.exports = {
         res.redirect('/')
     }
 }
+
+
+
+
+
+
