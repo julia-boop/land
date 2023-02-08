@@ -60,14 +60,24 @@
     transition: 0.3s ease-in-out;
 }
 
-.filter-container ul li:hover{
+.filter-container ul li a {
+    color: black;
+}
+
+.filter-container ul li.filter-active{
     border: 3px solid rgb(81, 80, 80);   
 }
 
-.filter-container ul li:active{
-    background-color: rgb(81, 80, 80);
-    color: white;
+.filter-container ul li.filter-active a{
+    color: white!important;
 }
+
+.filter-container ul li.filter-active{
+    background-color: rgb(81, 80, 80);
+    color: white!important;
+}
+
+
 
 .search-result-container{
     width: 100%;

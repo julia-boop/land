@@ -14,7 +14,7 @@ function Categories() {
                     </div>
                 </div>
                 <div className="farm-btn-container">
-                    <a href="post">Ver Propiedades</a>
+                    <a href="/properties/1">Ver Propiedades</a>
                 </div>
             </div>
             <div className="development-container">
@@ -25,7 +25,7 @@ function Categories() {
                     <h1>Desarrollos & Comunidades</h1>
                 </div>
                 <div className="development-btn-container">
-                    <a href="post">Ver Propiedades</a>
+                    <a href="/properties/2">Ver Propiedades</a>
                 </div>
             </div>
             <div className="property-container">
@@ -36,7 +36,7 @@ function Categories() {
                     <h1>Propiedades</h1>
                 </div>
                 <div className="property-btn-container">
-                    <a href="post">Ver Propiedades</a>
+                    <a href="/properties/3">Ver Propiedades</a>
                 </div>
             </div>
             <div className="rental-container">
@@ -47,7 +47,7 @@ function Categories() {
                     <h1>Alquileres</h1>
                 </div>
                 <div className="rental-btn-container">
-                    <a href="post">Ver Propiedades</a>
+                    <a href="/properties/4">Ver Propiedades</a>
                 </div>
             </div>
             <div className="buyers-agent-container">

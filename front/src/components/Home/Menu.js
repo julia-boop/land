@@ -22,103 +22,13 @@ const NavBar = () => {
     outerContainerId={'outer-container'}
     isOpen={isMenuOpen}
     onStateChange={handleStateChange} >
-      <Link 
-      onClick={()=> handleCloseMenu()} 
-      className="menu-item" 
-      to="home" 
-      activeClass="active" 
-      smooth={true} 
-      style={{"cursor":"pointer"}}
-      spy={true}
-      duration={2000}
-      delay={500}>
-        Inicio
-      </Link>
-      <Link 
-      onClick={()=> handleCloseMenu()} 
-      className="menu-item" 
-      to="about" 
-      activeClass="active" 
-      smooth={true} 
-      style={{"cursor":"pointer"}}
-      spy={true}
-      duration={2000}
-      delay={500}>
-        Campos y Chacras
-      </Link>
-      <Link 
-      onClick={()=> handleCloseMenu()} 
-      className="menu-item" 
-      to="products" 
-      activeClass="active" 
-      smooth="true" 
-      style={{"cursor":"pointer"}}
-      spy={true}
-      duration={2000}
-      delay={500}>
-        Desarrollos y Comunidades
-      </Link>
-      <Link 
-      onClick={()=> handleCloseMenu()} 
-      className="menu-item" 
-      to="services" 
-      activeClass="active" 
-      smooth="true" 
-      style={{"cursor":"pointer"}} 
-      spy={true}
-      duration={2000}
-      delay={500} >
-        Propiedades
-      </Link>
-      <Link 
-      onClick={()=> handleCloseMenu()} 
-      className="menu-item" 
-      to="client" 
-      activeClass="active" 
-      smooth="true" 
-      style={{"cursor":"pointer"}}
-      spy={true}
-      duration={2000}
-      delay={500}>
-        Alquileres
-      </Link>
-      <Link 
-      onClick={()=> handleCloseMenu()} 
-      className="menu-item" 
-      to="faqs" 
-      activeClass="active" 
-      smooth="true" 
-      style={{"cursor":"pointer"}} 
-      spy={true}
-      duration={2000}
-      delay={500}>
-        Argentina
-      </Link>
-      <Link 
-      onClick={()=> handleCloseMenu()} 
-      className="menu-item" 
-      to="contact" 
-      activeClass="active" 
-      smooth="true" 
-      style={{"cursor":"pointer"}} 
-      spy={true}
-      duration={2000}
-      delay={500}>
-        Contacto
-      </Link>
-      <Link 
-      onClick={()=> handleCloseMenu()} 
-      className="menu-item" 
-      to="contact" 
-      activeClass="active" 
-      smooth="true" 
-      style={{"cursor":"pointer"}} 
-      spy={true}
-      duration={2000}
-      delay={500}>
-        ES
-      </Link>
-      
+      <a href="/" onClick={() => handleCloseMenu() } className="menu-item">Inicio</a>
+      <a href="/properties/1" onClick={() => handleCloseMenu() } className="menu-item">Campos y Chacras</a>
+      <a href="/properties/2" onClick={() => handleCloseMenu() } className="menu-item">Comunidades y Desarrollos</a>
+      <a href="/properties/3" onClick={() => handleCloseMenu() } className="menu-item">Alquileres</a>
+      <a href="/properties/4" onClick={() => handleCloseMenu() } className="menu-item">Propiedades</a>
+      <a href="/properties/5" onClick={() => handleCloseMenu() } className="menu-item">Argentina</a>
+      <a href="/detail/1" onClick={() => handleCloseMenu() } className="menu-item">ES</a>
     
     </Menu>
   );

@@ -17,7 +17,15 @@
 
 .about-text-container p{
     text-align: center;
-    margin: 0 60px 20px 60px;
+    margin: 0 60px 0px 60px;
+}
+
+.about-text-container a{
+    text-align: center!important;
+    color: teal !important;
+    font-weight: 600;
+    display: block;
+    text-decoration: underline;
 }
 
 @media(max-width:480px){

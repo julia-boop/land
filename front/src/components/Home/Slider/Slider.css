@@ -8,10 +8,10 @@
     text-align: left;
     text-transform: uppercase;
     letter-spacing: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.carousel-caption p {
+.carousel-caption p{
     color: white;
 }
 
@@ -34,8 +34,9 @@
     } */
 }
 
-@media(max-width:320px){
-    .carousel-caption{
-        font-size: 0.56rem;
+@media(max-width:400px){
+    .carousel-caption p{
+        font-size: 0.4rem;
+        color: white;
     }
 }

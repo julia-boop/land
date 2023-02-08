@@ -11,8 +11,8 @@ function Slider() {
         .then((res) => {
             setImages(res.data)
         })
-        console.log(images)
     }, [])
+    console.log(images)
 
     return (
         <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
@@ -23,7 +23,7 @@ function Slider() {
                             <div key={image.id} className={(i == 0)? 'carousel-item active' : 'carousel-item'} data-bs-interval="5000">
                                 <img src={image.images[0].url} className="d-block w-100" alt="..."/>
                                 <div className="carousel-caption d-md-block">
-                                    <a href=""><p>{image.name}</p></a>
+                                    <a href={'/detail/'+image.id}><p>{image.name}</p></a>
                                 </div>
                             </div>
                         )

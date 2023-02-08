@@ -109,6 +109,19 @@
     margin: 30px 10px;
 }
 
+.success-msg p{
+    padding: 10px;
+    margin: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    background: #1987549a;
+    color: white;
+    border-radius: 10px;
+    transform: translateY(2px);
+    transition: ease-in-out 2s;
+  }
+
 @media(max-width:768px){
     .form-container form input::placeholder, .form-container form input, .form-container form textarea::placeholder, .form-container form textarea, .form-container form button, .phone-container h5{
         font-size: 0.9rem;

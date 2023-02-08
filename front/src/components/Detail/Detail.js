@@ -1,88 +1,136 @@
-import React from 'react'
-import Navbarb from '../Browse/Navbar-b'
+import React, {useEffect, useState} from 'react'
+import Navbar from '../Home/Navbar'
 import Menu from '../Home/Menu'
 import Contact from '../Contact/Contact'
 import Slideshow from './Slideshow'
-
+import Related from './Related'
+import axios from 'axios'
+import {useParams} from 'react-router-dom'
 import './Detail.css'
 
 function Detail() {
+    const [property, setProperty] = useState({})
+    const [feature, setFeature] = useState([])
+    const [category, setCategory] = useState(0)
+    const [properties, setProperties] = useState([])
+    const params = useParams()
+    useEffect(  () => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.post('http://localhost:3001/endpoints/fetch_detail', params)
+                setFeature(response.data.features)
+                setProperty(response.data.data)
+                setCategory(response.data.data.category_id)
+                console.log(response.data.data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        const fetchRelated = async () => {
+            try {
+                const response = await axios.post('http://localhost:3001/endpoints/fetch_related', {cat:category})
+                setProperties(response.data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        if(Object.keys(property).length === 0 ) {
+            fetchRelated() 
+        }
+ 
+        
+        fetchData()
+    }, [])
     return (
         <div>
-            <Navbarb/>
+            
             <Menu/>
             <div className="img-name-container">
                 <div className="img-container">
-                    <img src="/img/slide1.jpg"></img>
-                </div>            
+                    <img src={property.portrait} alt="detail"></img>
+                 </div>            
             </div>
+            <Navbar/>
             <div className="detail-container">
                 <div className="description-container">
-                    <h2>Casa 01</h2>
-                    <p>Spectacular house within the “Club del Mar” of José Ignacio, very well built with fine finishes of first level, excellent view of the sea, very well placed and fully equipped. On the top floor enjoying the best view, with very good spaces and large windows we find a living room, playroom, kitchen and 1 suite. Terrace with barbecue with large wooden deck. On the ground floor we have 1 suite, 2 semi-suite, laundry room, two-car garage and a large utility room with bathroom. We are also outside on the ground floor with a large bedroom suite and another living room that can be used for guests.</p>
+                    <h2>{property.name}</h2>
+                    <p>{property.description}</p>
                 </div>
                 <div className="stats-container">
+                    {
+                        feature.map((f) => {
+                            return (
+                                <div className="stat" key={f.id}>
+                                    <h4>{f.feature.name}</h4>
+                                    <h3>{f.value}</h3>
+                                </div>
+                            )
+                        })
+                    }
                     <div className="stat">
-                        <h4>Superficie</h4>
-                        <h3>1350 m2</h3>
-                    </div>
-                    <div className="stat">
-                        <h4>Superficie Construida</h4>
-                        <h3>550 m2</h3>
-                    </div>
-                    <div className="stat">
-                        <h4>Ubicacion</h4>
-                        <h3>Jose Ignacio</h3>
+                        <h4>Precio</h4>
+                        <h3>{(property.price == 0) ? <u><a href={'mailto:crdr.jc@gmail.com?subject=Consulta Precio de la Propiedad: '+property.name}>Preguntar</a></u> : property.price}</h3>
                     </div>
                     <div className="stat">
                         <h4>Pais</h4>
-                        <h3>Uruguay</h3>
-                    </div>
-                    <div className="stat">
-                        <h4>Precio</h4>
-                        <h3><u>Preguntar</u></h3>
+                        <h3>{property.country}</h3>
                     </div>
                 </div>
             </div>
             <div className="buyers-container">
-                <button>Buyers Agent</button>
+                <a href={'mailto:crdr.jc@gmail.com?subject=Consulta Propiedad: '+property.name}><button>Buyers Agent</button></a> 
             </div>
             <div className="slideshow-container">
-                <Slideshow/>
+                <Slideshow /> 
             </div>
+            { property.video &&
+                <div className="video-container">
+                    <iframe width="700" height="465" src={property.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            }
+        
             <div className="map-container">
                 <div className="mapouter">
                     <div className="gmap_canvas">
-                        <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=jose%20ignacio&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        <iframe width="600" height="500" id="gmap_canvas" src={property.map_url} frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                     </div>
                 </div>
-            </div>
-            <div className="video-container">
-                <iframe width="700" height="465" src="https://www.youtube.com/embed/hUx3W1MNRDg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div className="related-main-container">
                 <h2>Propiedades relacionadas</h2>
                 <div className="related-container">
-                    <div className="related-item">
-                        <img src="/img/slide0.jpg"></img>
-                        <h3>Casa 01</h3>
-                    </div>
-                    <div className="related-item">
-                        <img src="/img/slide1.jpg"></img>
-                        <h3>Casa 02</h3>
-                    </div>
-                    <div className="related-item">
-                        <img src="/img/slide2.jpg"></img>
-                        <h3>Casa 03</h3>
-                    </div>
+                    {
+                        properties.slice(0, 3).map((property) => {
+                            return (
+                                <div className="related-item" key={property.id}>
+                                    <a href={'/detail/'+property.id}>
+                                        <img src={property.images[0].url}></img>
+                                        <h3>{property.name}</h3>
+                                    </a>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
-            </div>
+            </div> 
+        
             <Contact/>
         </div>
     )
 }
 
 export default Detail
+
+
+
+
+
+
+
+
+
+
+
 
 
 

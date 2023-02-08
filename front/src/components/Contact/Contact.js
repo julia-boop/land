@@ -1,7 +1,32 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import './Contact.css';
+import emailjs from 'emailjs-com';
+
 
 function Contact() {
+
+    const form = useRef();
+    
+    const sendEmail = (e) => {
+      e.preventDefault();
+      emailjs.sendForm('service_fttkcfr', 'template_w8sbcte', e.target, 'xGsviFBj3-Sr9gQko')
+        .then((result) => {
+            let succesmsg = document.querySelector('.success-msg')
+            let formsent = document.querySelector('form')
+            succesmsg.innerHTML = '<p>El mensaje ha sido enviado con éxito</p>'
+            console.log(e.target.elements);
+            formsent.reset()
+            
+        }, (error) => {
+            console.log(error.text);
+        }).then(() => {
+            setTimeout(() => {
+                let succesmsgsent = document.querySelector('.success-msg')
+                succesmsgsent.innerHTML = ''
+            }, 3000)
+        })
+    };
+
     return (
         <div>
             <div className="contact-form-container">
@@ -19,11 +44,12 @@ function Contact() {
                 <div className="form-main-container">
                     <h1>Contacto</h1>
                     <div className="form-container">
-                        <form>
-                            <input type="text" placeholder="Nombre..."></input>
-                            <input type="text" placeholder="Apellido"></input>
-                            <input type="email" placeholder="Email..."></input>
-                            <textarea type="text" placeholder="Mensaje..." rows="7"></textarea>
+                        <form ref={form} onSubmit={sendEmail}>
+                            <div className="success-msg"></div>
+                            <input type="text" placeholder="Nombre..." name="user_name"></input>
+                            <input type="text" placeholder="Apellido" name="user_surname"></input>
+                            <input type="email" placeholder="Email..." name="user_email"></input>
+                            <textarea type="text" placeholder="Mensaje..." rows="7" name="message"></textarea>
                             <button>Enviar</button>
                         </form>
                     </div>

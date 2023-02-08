@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500&family=Noto+Serif+Georgian:wght@500&display=swap');
+
+*{
+    font-family: 'Inter Tight', sans-serif;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+
+.header ul{
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+    padding: 0px;
+}
+
+.header ul li {
+    list-style: none;
+    margin: 30px;
+}
+
+.header ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.form-container{
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container h3{
+    text-align: center;
+}
+
+.form-container form{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.form-container form input, textarea, select, label{
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+.form-container form button{
+    margin-top: 20px;
+    border: none;
+    background-color: teal;
+    color: white;
+    border-radius: 0px;
+    padding: 10px;
+    width:40%
+}
+
+button#btn_image, button#btn_feature{
+    background-color: rgb(73, 177, 177);
+    margin-bottom: 20px;
+}
+
+input[type="checkbox"]{
+    width: 25%!important;
+}
+
+.img-input-container, .feature-input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    text-align: center;
+}
+
+.img-input-container input, .feature-input-container input{
+    width: 100%!important;
+}
+
+.img-input-container div img{
+    width: 50%;
+}
+
+.portrait_img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.portrait_img img{
+    width: 50%;
+    margin-bottom:15px
+}
+
+.feature{
+    border: rgb(73, 177, 177) 2px solid;
+}
+
+.all-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.property-container{
+    background-color: whitesmoke;
+    border: 2px solid  rgb(73, 177, 177);
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    margin: 30px;
+}
+
+.property-container img{
+    width: 90%;
+    border: 1px solid black;
+}
+
+

@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes){
             allowNull: true
         },
         video: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.TEXT,
             allowNull: true
         },
         category_id: {
@@ -40,6 +40,10 @@ module.exports = function(sequelize, DataTypes){
             allowNull: false            
         }, 
         map_url: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        }, 
+        portrait_url: {
             type: DataTypes.TEXT,
             allowNull: false
         }
