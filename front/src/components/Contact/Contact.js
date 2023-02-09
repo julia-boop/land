@@ -60,9 +60,9 @@ function Contact() {
                     <img src="/logo/logo-2.png"></img>
                 </div>
                 <div className="media-img-container">
-                    <img src="/icon/youtube.svg"></img>
-                    <img src="/icon/whatsapp.svg"></img>
-                    <img src="/icon/instagram.svg"></img>
+                    <a href="https://youtube.com/@rodmilne2890"><img src="/icon/youtube.svg"></img></a>
+                    <a href="https://wa.me/+59895047870"><img src="/icon/whatsapp.svg"></img></a>
+                    <a href="https://instagram.com/landlatinamerica"><img src="/icon/instagram.svg"></img></a>
                 </div>
             </div>
         </div>
