@@ -7,7 +7,7 @@ function Slider() {
     const [images, setImages] = useState([])
     const [active, setActive] = useState(false)
     useEffect(() => {
-        axios.get('http://localhost:3001/endpoints/fetch_home')
+        axios.get(`${process.env.REACT_APP_ENDPOINT}fetch_home`)
         .then((res) => {
             setImages(res.data)
         })

@@ -17,7 +17,7 @@ function Detail() {
     useEffect(  () => {
         const fetchData = async () => {
             try {
-                const response = await axios.post('http://localhost:3001/endpoints/fetch_detail', params)
+                const response = await axios.post(`${process.env.REACT_APP_ENDPOINT}fetch_detail`, params)
                 setFeature(response.data.features)
                 setProperty(response.data.data)
                 setCategory(response.data.data.category_id)
@@ -28,7 +28,7 @@ function Detail() {
         }
         const fetchRelated = async () => {
             try {
-                const response = await axios.post('http://localhost:3001/endpoints/fetch_related', {cat:category})
+                const response = await axios.post(`${process.env.REACT_APP_ENDPOINT}fetch_related`, {cat:category})
                 setProperties(response.data)
             } catch (error) {
                 console.log(error)
