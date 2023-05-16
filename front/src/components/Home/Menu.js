@@ -25,8 +25,8 @@ const NavBar = () => {
       <a href="/" onClick={() => handleCloseMenu() } className="menu-item">Inicio</a>
       <a href="/properties/1" onClick={() => handleCloseMenu() } className="menu-item">Campos y Chacras</a>
       <a href="/properties/2" onClick={() => handleCloseMenu() } className="menu-item">Comunidades y Desarrollos</a>
-      <a href="/properties/3" onClick={() => handleCloseMenu() } className="menu-item">Alquileres</a>
-      <a href="/properties/4" onClick={() => handleCloseMenu() } className="menu-item">Propiedades</a>
+      <a href="/properties/3" onClick={() => handleCloseMenu() } className="menu-item">Propiedades</a>
+      <a href="/properties/4" onClick={() => handleCloseMenu() } className="menu-item">Alquileres</a>
       <a href="/properties/5" onClick={() => handleCloseMenu() } className="menu-item">Argentina</a>
       <a href="/detail/1" onClick={() => handleCloseMenu() } className="menu-item">ES</a>
     

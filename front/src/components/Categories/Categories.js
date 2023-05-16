@@ -54,8 +54,8 @@ function Categories() {
                 <h2>Buyers Agent</h2>
                 <h3>-----------------</h3>
                 <div className="buyers-agent-text-container">
-                    <p>Our service provides a prime representation throughout the acquisition process - from property search and due diligence to viewings, negotiation and conveyancing, with negotiation skills acting on your side. We develop a true understanding of your objectives and identify the best target properties, we will always keep your identity and all information obtained from you private and confidential, and out of the headlines.</p>
-                    <p>Our commitment to you does not stop when you receive the keys at completion. You receive complimentary advisory and consulting services for life.</p>
+                    <p>Nuestro servicio proporciona una representación de primer orden a lo largo de todo el proceso de adquisición: desde la búsqueda de propiedades y la diligencia debida hasta las visitas, la negociación y la transmisión, con habilidades de negociación que actúan de su lado. Desarrollamos una verdadera comprensión de sus objetivos e identificamos las mejores propiedades objetivo, siempre mantendremos su identidad y toda la información obtenida de usted privada y confidencial, y fuera de los titulares.</p>
+                    <p>Nuestro compromiso con usted no termina cuando recibe las llaves. Recibirá servicios gratuitos de asesoramiento y consultoría de por vida.</p>
                 </div>
             </div>
         </div>
