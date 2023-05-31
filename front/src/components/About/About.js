@@ -26,7 +26,7 @@ function About() {
             <h3>---------------------------------------</h3>
             <div className="about-text-container">
                 <p className="read-more"> Luego de recorrer Uruguay  durante los últimos años, es el momento apropiado para crear un nuevo sitio de encuentro para los grandes inversores que creen que las tierras con recursos naturales y vírgenes, están pasando a ser bienes escasos y únicos. <br></br> Para valuar las bondades de estas propiedades, tome encuenta la biodiversidad del ecosistema. Fuentes de aguas permanentes, reservorio de aguas naturales o playas prácticamente virgenes con un clima templado, de temperaturas amigables.</p> 
-                <a onClick={toggleReadMore}> {readMore ? 'Read more...' : 'Show less...'} </a>
+                <a onClick={toggleReadMore}> {readMore ? 'Leer más...' : 'Mostrar menos...'} </a>
             </div>
         </div>
     )

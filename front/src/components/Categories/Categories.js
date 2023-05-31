@@ -10,7 +10,7 @@ function Categories() {
                         <h1>Campos & Chacras</h1>
                     </div>
                     <div className="farm-img-container">
-                        <img src="/img/farms.jpg" alt="farms"></img>
+                        <img src="https://i.postimg.cc/h4yfJSs8/IMG-3356.jpg" alt="farms"></img>
                     </div>
                 </div>
                 <div className="farm-btn-container">
@@ -19,7 +19,7 @@ function Categories() {
             </div>
             <div className="development-container">
                 <div className="development-img-container">
-                    <img src="/img/development.jpg" alt="developments"></img>
+                    <img src="https://i.postimg.cc/8zBG64D8/AG-4-F-142058.jpg" alt="developments"></img>
                 </div>
                 <div className="development-title-container">
                     <h1>Desarrollos & Comunidades</h1>
@@ -30,18 +30,18 @@ function Categories() {
             </div>
             <div className="property-container">
                 <div className="property-img-container">
-                    <img src="/img/property.jpg" alt="properties"></img>
+                    <img src="https://i.postimg.cc/ZqWhMSpm/18-copy-1.jpg" alt="properties"></img>
                 </div>
                 <div className="property-title-container">
                     <h1>Propiedades</h1>
                 </div>
-                <div className="property-btn-container">
-                    <a href="/properties/3">Ver Propiedades</a>
-                </div>
+            </div>
+            <div className="property-btn-container">
+                <a href="/properties/3">Ver Propiedades</a>
             </div>
             <div className="rental-container">
                 <div className="rental-img-container">
-                    <img src="/img/rental.jpg" alt="rentals"></img>
+                    <img src="https://i.postimg.cc/nLJvdH6j/01-9.jpg" alt="rentals"></img>
                 </div>
                 <div className="rental-title-container">
                     <h1>Alquileres</h1>
