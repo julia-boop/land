@@ -13,6 +13,7 @@ function Detail() {
     const [feature, setFeature] = useState([])
     const [category, setCategory] = useState(0)
     const [properties, setProperties] = useState([])
+    const [related, setRelated] = useState([])
     const params = useParams()
     useEffect(  () => {
         const fetchData = async () => {
@@ -21,25 +22,28 @@ function Detail() {
                 setFeature(response.data.features)
                 setProperty(response.data.data)
                 setCategory(response.data.data.category_id)
-                console.log(response.data.data)
             } catch (error) {
                 console.log(error)
             }
         }
         const fetchRelated = async () => {
             try {
+                console.log(category)
                 const response = await axios.post('http://localhost:3001/endpoints/fetch_related', {cat:category})
                 setProperties(response.data)
+                setRelated(response.data)
             } catch (error) {
                 console.log(error)
             }
         }
+        
         if(Object.keys(property).length === 0 ) {
             fetchRelated() 
         }
- 
-        
+
         fetchData()
+
+        
     }, [])
     return (
         <div>
@@ -100,7 +104,7 @@ function Detail() {
                 <h2>Propiedades relacionadas</h2>
                 <div className="related-container">
                     {
-                        properties.slice(0, 3).map((property) => {
+                        related.filter((e)=> e.category_id == property.category_id).slice(0, 3).map((property) => {
                             return (
                                 <div className="related-item" key={property.id}>
                                     <a href={'/detail/'+property.id}>

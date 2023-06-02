@@ -31,7 +31,7 @@
     }
 
     .searchform-container input{
-        font-size: 0.75rem;
+        font-size: 0.55rem;
         padding: 10px;
     }
 }
@@ -42,7 +42,7 @@
     }
 
     .search-container{
-        top: 25%;
+        top: 15%;
     }
 }
 

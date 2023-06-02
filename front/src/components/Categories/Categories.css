@@ -236,6 +236,9 @@ BUYERS AGENT
     .rental-title-container{
         width: 50%;
     }
+    .property-container{
+        flex-direction: column;
+    }
 }
 
 @media(max-width:480px){
