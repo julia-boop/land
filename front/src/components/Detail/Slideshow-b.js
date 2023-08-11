@@ -8,7 +8,7 @@ function Slideshowb() {
     const [images, setImages] = useState([])
 
     useEffect(  () => {
-        const url = 'http://localhost:3001/endpoints/fetch_detail'
+        const url = `${process.env.REACT_APP_ENDPOINT}fetch_detail`
         const fetchData = async () => {
             try {
                 const response = await axios.post(url, params)
