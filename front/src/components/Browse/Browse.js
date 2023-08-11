@@ -44,7 +44,7 @@ function Browse() {
     }
 
     useEffect(() => {
-        axios.post('http://localhost:3001/endpoints/fetch_categories', params)
+        axios.post(`${process.env.REACT_APP_ENDPOINT}fetch_categories`, params)
         .then((res) => {
             console.log(res.data.data)
             setFilterProperties(handleQueryValue(query, res.data.data), setProperties(res.data.data))  

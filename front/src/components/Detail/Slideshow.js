@@ -30,10 +30,10 @@ function Slideshow() {
     console.log(index)
     };
     useEffect(  () => {
-        const url = 'http://localhost:3001/endpoints/fetch_detail'
+        const url = `${process.env.REACT_APP_ENDPOINT}fetch_detail`
         const fetchData = async () => {
             try {
-                const response = await axios.post('http://localhost:3001/endpoints/fetch_detail', params)
+                const response = await axios.post(`${process.env.REACT_APP_ENDPOINT}fetch_detail`, params)
                 setImages(response.data.images)
             } catch (error) {
                 console.log(error)
