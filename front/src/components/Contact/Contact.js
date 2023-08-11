@@ -31,7 +31,6 @@ function Contact() {
         <div>
             <div className="contact-form-container">
                 <div className="contact-container">
-                    <h1>Hablemos de LAND</h1>
                     <div className="contact-img-container">
                         <img src="/logo/logo-1.png" alt="logo"></img>
                     </div>

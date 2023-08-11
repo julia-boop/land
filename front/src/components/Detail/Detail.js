@@ -3,6 +3,7 @@ import Navbar from '../Home/Navbar'
 import Menu from '../Home/Menu'
 import Contact from '../Contact/Contact'
 import Slideshow from './Slideshow'
+import Slideshowb from './Slideshow-b'
 import Related from './Related'
 import axios from 'axios'
 import {useParams} from 'react-router-dom'
@@ -13,6 +14,7 @@ function Detail() {
     const [feature, setFeature] = useState([])
     const [category, setCategory] = useState(0)
     const [properties, setProperties] = useState([])
+    const [related, setRelated] = useState([])
     const params = useParams()
     useEffect(  () => {
         const fetchData = async () => {
@@ -21,7 +23,6 @@ function Detail() {
                 setFeature(response.data.features)
                 setProperty(response.data.data)
                 setCategory(response.data.data.category_id)
-                console.log(response.data.data)
             } catch (error) {
                 console.log(error)
             }
@@ -29,17 +30,22 @@ function Detail() {
         const fetchRelated = async () => {
             try {
                 const response = await axios.post(`${process.env.REACT_APP_ENDPOINT}fetch_related`, {cat:category})
+                console.log(category)
+              
                 setProperties(response.data)
+                setRelated(response.data)
             } catch (error) {
                 console.log(error)
             }
         }
+        
         if(Object.keys(property).length === 0 ) {
             fetchRelated() 
         }
- 
-        
+
         fetchData()
+
+        
     }, [])
     return (
         <div>
@@ -80,8 +86,11 @@ function Detail() {
             <div className="buyers-container">
                 <a href={'mailto:crdr.jc@gmail.com?subject=Consulta Propiedad: '+property.name}><button>Buyers Agent</button></a> 
             </div>
+            
             <div className="slideshow-container">
-                <Slideshow /> 
+                <Slideshowb /> 
+                {/* <Slideshow />  */}
+                
             </div>
             { property.video &&
                 <div className="video-container">
@@ -100,7 +109,7 @@ function Detail() {
                 <h2>Propiedades relacionadas</h2>
                 <div className="related-container">
                     {
-                        properties.slice(0, 3).map((property) => {
+                        related.filter((e)=> e.category_id == property.category_id).slice(0, 3).map((property) => {
                             return (
                                 <div className="related-item" key={property.id}>
                                     <a href={'/detail/'+property.id}>

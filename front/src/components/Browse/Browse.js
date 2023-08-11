@@ -13,7 +13,6 @@ function Browse() {
     const [input, setInput] = useState()
     const [query, setQuery] = useState(() => {
         const q = new URLSearchParams(window.location.search);
-        /* console.log(q.toString()); */
         return q.get("query") || "";
       });
     const params = useParams()
@@ -32,6 +31,7 @@ function Browse() {
             found = new Set(found)
             found = Array.from(found)
         }
+        console.log(found)
         return found
     }
 

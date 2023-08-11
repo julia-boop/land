@@ -10,7 +10,7 @@ function Categories() {
                         <h1>Campos & Chacras</h1>
                     </div>
                     <div className="farm-img-container">
-                        <img src="/img/farms.jpg" alt="farms"></img>
+                        <img src="https://i.postimg.cc/h4yfJSs8/IMG-3356.jpg" alt="farms"></img>
                     </div>
                 </div>
                 <div className="farm-btn-container">
@@ -19,7 +19,7 @@ function Categories() {
             </div>
             <div className="development-container">
                 <div className="development-img-container">
-                    <img src="/img/development.jpg" alt="developments"></img>
+                    <img src="https://i.postimg.cc/8zBG64D8/AG-4-F-142058.jpg" alt="developments"></img>
                 </div>
                 <div className="development-title-container">
                     <h1>Desarrollos & Comunidades</h1>
@@ -30,18 +30,18 @@ function Categories() {
             </div>
             <div className="property-container">
                 <div className="property-img-container">
-                    <img src="/img/property.jpg" alt="properties"></img>
+                    <img src="https://i.postimg.cc/ZqWhMSpm/18-copy-1.jpg" alt="properties"></img>
                 </div>
                 <div className="property-title-container">
                     <h1>Propiedades</h1>
                 </div>
-                <div className="property-btn-container">
-                    <a href="/properties/3">Ver Propiedades</a>
-                </div>
+            </div>
+            <div className="property-btn-container">
+                <a href="/properties/3">Ver Propiedades</a>
             </div>
             <div className="rental-container">
                 <div className="rental-img-container">
-                    <img src="/img/rental.jpg" alt="rentals"></img>
+                    <img src="https://i.postimg.cc/nLJvdH6j/01-9.jpg" alt="rentals"></img>
                 </div>
                 <div className="rental-title-container">
                     <h1>Alquileres</h1>
@@ -54,8 +54,8 @@ function Categories() {
                 <h2>Buyers Agent</h2>
                 <h3>-----------------</h3>
                 <div className="buyers-agent-text-container">
-                    <p>Our service provides a prime representation throughout the acquisition process - from property search and due diligence to viewings, negotiation and conveyancing, with negotiation skills acting on your side. We develop a true understanding of your objectives and identify the best target properties, we will always keep your identity and all information obtained from you private and confidential, and out of the headlines.</p>
-                    <p>Our commitment to you does not stop when you receive the keys at completion. You receive complimentary advisory and consulting services for life.</p>
+                    <p>Nuestro servicio proporciona una representación de primer orden a lo largo de todo el proceso de adquisición: desde la búsqueda de propiedades y la diligencia debida hasta las visitas, la negociación y la transmisión, con habilidades de negociación que actúan de su lado. Desarrollamos una verdadera comprensión de sus objetivos e identificamos las mejores propiedades objetivo, siempre mantendremos su identidad y toda la información obtenida de usted privada y confidencial, y fuera de los titulares.</p>
+                    <p>Nuestro compromiso con usted no termina cuando recibe las llaves. Recibirá servicios gratuitos de asesoramiento y consultoría de por vida.</p>
                 </div>
             </div>
         </div>

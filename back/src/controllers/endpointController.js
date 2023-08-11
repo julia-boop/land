@@ -75,6 +75,7 @@ module.exports = {
         
     }, 
     fetchRelated: (req, res) => {
+        console.log('=========================================')
         console.log(req.body)
         if(req.body.cat != 0) {
             db.Property.findAll({
