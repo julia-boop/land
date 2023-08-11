@@ -28,8 +28,6 @@ const NavBar = () => {
       <a href="/properties/3" onClick={() => handleCloseMenu() } className="menu-item">Propiedades</a>
       <a href="/properties/4" onClick={() => handleCloseMenu() } className="menu-item">Alquileres</a>
       <a href="/properties/5" onClick={() => handleCloseMenu() } className="menu-item">Argentina</a>
-      <a href="/detail/1" onClick={() => handleCloseMenu() } className="menu-item">ES</a>
-    
     </Menu>
   );
 };
