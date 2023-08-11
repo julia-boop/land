@@ -3,6 +3,7 @@ import Navbar from '../Home/Navbar'
 import Menu from '../Home/Menu'
 import Contact from '../Contact/Contact'
 import Slideshow from './Slideshow'
+import Slideshowb from './Slideshow-b'
 import Related from './Related'
 import axios from 'axios'
 import {useParams} from 'react-router-dom'
@@ -84,8 +85,11 @@ function Detail() {
             <div className="buyers-container">
                 <a href={'mailto:crdr.jc@gmail.com?subject=Consulta Propiedad: '+property.name}><button>Buyers Agent</button></a> 
             </div>
+            
             <div className="slideshow-container">
-                <Slideshow /> 
+                <Slideshowb /> 
+                {/* <Slideshow />  */}
+                
             </div>
             { property.video &&
                 <div className="video-container">

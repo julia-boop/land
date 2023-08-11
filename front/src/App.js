@@ -3,6 +3,7 @@ import About from './components/About/About';
 import Categories from './components/Categories/Categories';
 import Contact from './components/Contact/Contact';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from 'react'
 
 

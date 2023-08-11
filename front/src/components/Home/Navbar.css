@@ -4,6 +4,7 @@
     width: 100%;
     background: rgb(0,0,0);
     background: linear-gradient(180deg, rgba(0,0,0,1) 22%, rgba(0,0,0,0.3239889705882353) 70%);
+    z-index: 100;
 }
 
 .navbar{
