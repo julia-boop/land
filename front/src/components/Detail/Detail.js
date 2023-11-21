@@ -75,7 +75,7 @@ function Detail() {
                     }
                     <div className="stat">
                         <h4>Precio</h4>
-                        <h3>{(property.price == 0) ? <u><a href={'mailto:crdr.jc@gmail.com?subject=Consulta Precio de la Propiedad: '+property.name}>Preguntar</a></u> : property.price}</h3>
+                        <h3>{(property.price == 0) ? <u><a href={'mailto:rfsm@landlatinamerica.com?subject=Consulta Precio de la Propiedad: '+property.name}>Preguntar</a></u> : property.price}</h3>
                     </div>
                     <div className="stat">
                         <h4>Pais</h4>
@@ -84,7 +84,7 @@ function Detail() {
                 </div>
             </div>
             <div className="buyers-container">
-                <a href={'mailto:crdr.jc@gmail.com?subject=Consulta Propiedad: '+property.name}><button>Buyers Agent</button></a> 
+                <a href={'mailto:rfsm@landlatinamerica.com?subject=Consulta Propiedad: '+property.name}><button>Buyers Agent</button></a> 
             </div>
             
             <div className="slideshow-container">
