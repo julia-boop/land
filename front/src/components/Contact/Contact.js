@@ -32,7 +32,7 @@ function Contact() {
             <div className="contact-form-container">
                 <div className="contact-container">
                     <div className="contact-img-container">
-                        <img src="/logo/logo-1.png" alt="logo"></img>
+                        <img src="/logo/logo_1.png" alt="logo"></img>
                     </div>
                     <h4>Rodney Stuart Milne</h4>
                     <div className="phone-container"> 
